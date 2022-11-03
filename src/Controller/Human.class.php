@@ -125,7 +125,7 @@ abstract class Human
 
     public function __toString(): string
     {
-        return "Détails de l'écurie: \n
+        return "Informations sur la personne: \n
         Nom: {$this->getNom()} \n
         Adresse: {$this->getAddress()} \n
         Rue: {$this->getStreet()} \n

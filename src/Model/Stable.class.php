@@ -1,25 +1,26 @@
 <?php
 
-namespace App\Controller;
+namespace App\Model;
 
-abstract class Human
+class Stable
 {
     private string $nom;
     private string $address;
     private string $street;
     private string $postCode;
     private string $city;
-    private Categorie $categorie;
+    private Manager $manager;
 
-    public function __construct(string $nom, string $address, string $street, string $postCode, string $city, Categorie $categorie)
+    public function __construct(string $nom, string $address, string $street, string $postCode, string $city, Manager $manager)
     {
         $this->setNom($nom)
             ->setAddress($address)
             ->setStreet($street)
             ->setPostCode($postCode)
             ->setCity($city)
-            ->setCategorie($categorie);
+            ->setManager($manager);
     }
+
 
     /**
      * @return string
@@ -32,7 +33,7 @@ abstract class Human
     /**
      * @param string $nom
      */
-    public function setNom(string $nom): self
+    public function setNom($nom): self
     {
         $this->nom = $nom;
         return $this;
@@ -49,7 +50,7 @@ abstract class Human
     /**
      * @param string $address
      */
-    public function setAddress(string $address): self
+    public function setAddress($address): self
     {
         $this->address = $address;
         return $this;
@@ -66,7 +67,7 @@ abstract class Human
     /**
      * @param string $street
      */
-    public function setStreet(string $street): self
+    public function setStreet($street): self
     {
         $this->street = $street;
         return $this;
@@ -83,7 +84,7 @@ abstract class Human
     /**
      * @param string $postCode
      */
-    public function setPostCode(string $postCode): self
+    public function setPostCode($postCode): self
     {
         $this->postCode = $postCode;
         return $this;
@@ -100,38 +101,38 @@ abstract class Human
     /**
      * @param string $city
      */
-    public function setCity(string $city): self
+    public function setCity($city): self
     {
         $this->city = $city;
         return $this;
     }
 
     /**
-     * @return Categorie
+     * @return Manager
      */
-    public function getCategorie(): Categorie
+    public function getManager(): Manager
     {
-        return $this->categorie;
+        return $this->manager;
     }
 
     /**
-     * @param Categorie $categorie
+     * @param Manager $manager
      */
-    public function setCategorie(Categorie $categorie): self
+    public function setManager($manager): self
     {
-        $this->categorie = $categorie;
+        $this->manager = $manager;
         return $this;
     }
 
     public function __toString(): string
     {
-        return "Informations sur la personne: \n
-        Nom: {$this->getNom()} \n
-        Adresse: {$this->getAddress()} \n
-        Rue: {$this->getStreet()} \n
-        Code postal: {$this->getPostCode()} \n
-        Ville: {$this->getCity()} \n
-        Catégorie: {$this->getCategorie()} \n";
+        return "Détails de l'écurie: \n
+        Nom: {$this->getNom()}\n
+        Adresse: {$this->getAddress()}\n
+        Rue: {$this->getStreet()}\n
+        Code postal: {$this->getPostCode()}\n
+        Ville: {$this->getCity()}\n
+        Gérant: {$this->getManager()}\n";
     }
 
 }

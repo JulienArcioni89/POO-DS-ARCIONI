@@ -11,7 +11,7 @@ abstract class Equine
     private Rider $rider;
 
 
-    public function __construct(string $id, string $color, int $water, Categorie $categorie, Rider $rider )
+    public function __construct(string $id, string $color, int $water, Rider $rider, categorie $categorie)
     {
         $this->setId($id);
         $this->setColor($color);
@@ -105,4 +105,8 @@ abstract class Equine
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->getId();
+    }
 }

@@ -18,5 +18,8 @@ use App\Model\Stable;
 // On instancie un objet Manager et un objet Stable
 $manager1 = new Manager("Jean", "Rue des Tilleuls", "Caen", "14000", "France");
 $ecurie1 = new Stable("Ecurie de la ferme", "Rue de la ferme", "Caen", "14000", "France", $manager1);
-$cheval = new Horse();
+$rider = new \App\Model\Rider("Jean", "Rue des Tilleuls", "Caen", "14000", "France", new \App\Model\Capabilities("Jumping"));
+$cheval = new Horse("1", "blanc", 100, $rider);
 echo $ecurie1;
+echo $cheval;
+echo $rider;

@@ -123,6 +123,15 @@ abstract class Human
         return $this;
     }
 
-
+    public function __toString(): string
+    {
+        return "Détails de l'écurie: \n
+        Nom: {$this->getNom()} \n
+        Adresse: {$this->getAddress()} \n
+        Rue: {$this->getStreet()} \n
+        Code postal: {$this->getPostCode()} \n
+        Ville: {$this->getCity()} \n
+        Catégorie: {$this->getCategorie()} \n";
+    }
 
 }

@@ -9,9 +9,9 @@ class Rider extends Human
     /**
      * @var array
      */
-    public function __construct(string $nom, string $address, string $street, string $postCode, string $city, Categorie $categorie, GameType $gameType)
+    public function __construct(string $nom, string $address, string $street, string $postCode, string $city, GameType $gameType)
     {
-        parent::__construct($nom, $address, $street, $postCode, $city, $categorie);
+        parent::__construct($nom, $address, $street, $postCode, $city, new CatRider());
         $this->setGameType($gameType);
     }
 

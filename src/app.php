@@ -1,7 +1,6 @@
 <?php
 
-// Autoloading, pas besoin de require partout pour charger nos classes et chargement
-// automatique de nos librairies
+// Autoloading
 
 require_once('../vendor/autoload.php');
 
@@ -13,6 +12,6 @@ define('PUBLIC_DIR', __DIR__ . '/../public/');
 
 use App\Controller\Main;
 
-
+// Start of the application
 $prgm = new Main();
 $prgm->execute();

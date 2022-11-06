@@ -4,6 +4,7 @@ namespace App\Model;
 
 class Stable
 {
+    // Definition of the attributes
     private string $nom;
     private string $address;
     private string $street;
@@ -12,7 +13,7 @@ class Stable
     private Manager $manager;
     private array $equines;
 
-
+    // Definition of the constructor
     public function __construct(string $nom, string $address, string $street, string $postCode, string $city, Manager $manager)
     {
         $this->setNom($nom)
@@ -143,6 +144,9 @@ class Stable
         $this->equines = $equines;
     }
 
+    /**
+     * @param Equine $equine
+     */
     public function addEquine(Equine $equine): array
     {
         $this->equines[] = $equine;
@@ -150,6 +154,9 @@ class Stable
     }
 
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return "Détails de l'écurie: \n

@@ -9,8 +9,6 @@ abstract class Event
     private array $subscribeHorse = [];
     protected string $EventName;
 
-
-
     public function __construct(string $EventName, int $MaxCommitments, int $MaxWater)
     {
         $this->setMaxCommitments($MaxCommitments);
@@ -64,8 +62,6 @@ abstract class Event
         return $this;
     }
 
-
-
     /**
      * @return string $subscribeHorse
      */
@@ -73,18 +69,17 @@ abstract class Event
     {
         if (count($this->subscribeHorse) < $this->MaxCommitments) {
             if ($equine->getWater() > $this->getMaxWater()) {
-                echo "Ohoh ! L'animal " . $equine->getId() . " NE PEUT PAS participer à l'évènement " . $this->getEventName() . " car il a besoin d'une trop grande qualtité d'eau (". $equine->getWater() . "L).\n";
+                echo "Oupss ! L'animal " . $equine->getId() . " NE PEUT PAS participer à l'évènement " . $this->getEventName() . " car il a besoin d'une trop grande qualtité d'eau (". $equine->getWater() . "L).\n";
             } else {
                 $this->subscribeHorse[] = $equine;
                 echo "L'animal " . $equine->getId() . " a bien été inscrit à l'évènement " . $this->getEventName() . ".\n";
                 $this->MaxWater = $this->getMaxWater() - $equine->getWater();
             }
         } else {
-            echo "Ohoh ! L'animal " . $equine->getId() . " NE PEUT PAS participer à l'évènement " . $this->getEventName() . " car il n'y a plus de place.\n";
+            echo "Oupss ! L'animal " . $equine->getId() . " NE PEUT PAS participer à l'évènement " . $this->getEventName() . " car il n'y a plus de place.\n";
         }
 
     }
-
 
     public function __toString()
     {

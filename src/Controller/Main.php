@@ -2,15 +2,17 @@
 
 namespace App\Controller;
 
-use App\Model\Course;
 use App\Model\Horse;
+use App\Model\Poney;
+use App\Model\Sheitland;
 use App\Model\Manager;
 use App\Model\Stable;
 use App\Model\Rider;
+use App\Model\Course;
 use App\Model\Saut;
-use App\Model\Poney;
-use App\Model\Sheitland;
 use App\Model\Dressage;
+use App\Model\Cross;
+use App\Model\PoneyGames;
 
 class Main
 {
@@ -39,21 +41,28 @@ class Main
 
         // On instancie un objet Horse
         $cheval = new Horse("Cheval-1", "blanc", 100, $michel);
-        echo "Nouveau : " . $cheval;
+        echo "Nouveau : " . $cheval . "Son cavalier est : " . $michel->getNom() . "\n";
+        echo "\n";
+
         // On instancie un objet Poney
         $poney = new Poney("Poney-1", "noir", 40, $jean);
-        echo "Nouveau : " . $poney;
+        echo "Nouveau : " . $poney . "Son cavalier est : " . $jean->getNom() . "\n";
+        echo "\n";
+
         // On instancie un objet Sheitland
         $sheitland = new Sheitland("Sheitland-1", "marron", 60, $michel);
-        echo "Nouveau : " . $sheitland;
-
-
-        // On ajoute les animaux à l'écurie
-        $equines = [$cheval, $poney, $sheitland];
+        echo "Nouveau : " . $sheitland . "Son cavalier est : " . $michel->getNom() . "\n";
+        echo "\n";
 
         // On crée un évènement
-        $event = new Course("Grand Prix de Caen", 10, 500);
-        echo $event;
+        $event = new Course("Grand Prix de Caen", 10, 70);
 
+        // On ajoute des chevaux à l'évènement
+        $subCheval = $event->subscribeHorse($cheval);
+        $subPoney = $event->subscribeHorse($poney);
+        $subSheitland = $event->subscribeHorse($sheitland);
+
+        // On ajoute les animaux à l'écurie
+        // $equines = [$cheval];
     }
 }

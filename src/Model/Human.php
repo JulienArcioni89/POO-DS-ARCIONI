@@ -131,7 +131,7 @@ abstract class Human
         Rue: {$this->getStreet()}
         Code postal: {$this->getPostCode()}
         Ville: {$this->getCity()}
-        Catégorie: {$this->getCategorie()->getNom()} \n";
+        Catégorie: {$this->getCategorie()->getNom()} \n\n\n";
     }
 
 }

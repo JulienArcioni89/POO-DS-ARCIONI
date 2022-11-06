@@ -137,4 +137,9 @@ abstract class Equine
         return $this->getId();
     }
 
+/*    public function setEvent(Event $param)
+    {
+        $this->event = $param;
+    }*/
+
 }

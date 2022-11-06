@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\Course;
 use App\Model\Horse;
 use App\Model\Manager;
 use App\Model\Stable;
@@ -49,6 +50,10 @@ class Main
 
         // On ajoute les animaux à l'écurie
         $equines = [$cheval, $poney, $sheitland];
+
+        // On crée un évènement
+        $event = new Course("Grand Prix de Caen", 10, 500);
+        echo $event;
 
     }
 }

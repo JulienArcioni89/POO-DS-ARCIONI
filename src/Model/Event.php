@@ -6,7 +6,7 @@ abstract class Event
 {
     private int $MaxCommitments;
     private int $MaxWater;
-    private string $subscribeHorse;
+    private array $subscribeHorse = [];
     protected string $EventName;
 
 
@@ -63,33 +63,26 @@ abstract class Event
         $this->MaxWater = $MaxWater;
         return $this;
     }
-    /**
-     * @return string
-     */
-    public function getSubscribeHorse(): string
-    {
-        return $this->subscribeHorse;
-    }
-    /**
-     * @param string $subscribeHorse
-     */
-    public function setSubscribeHorse(string $subscribeHorse): self
-    {
-        $this->subscribeHorse = $subscribeHorse;
-        return $this;
-    }
+
+
 
     /**
      * @return string $subscribeHorse
      */
     public function subscribeHorse(Equine $equine): void
     {
-        if ($equine->getWater() > $this->getMaxWater()) {
-            echo "Ohoh ! L'animal " . $equine->getId() . " NE PEUT PAS participer à l'évènement " . $this->getEventName() . " car il a besoin d'une trop grande qualtité d'eau (". $equine->getWater() . "L).\n";
+        if (count($this->subscribeHorse) < $this->MaxCommitments) {
+            if ($equine->getWater() > $this->getMaxWater()) {
+                echo "Ohoh ! L'animal " . $equine->getId() . " NE PEUT PAS participer à l'évènement " . $this->getEventName() . " car il a besoin d'une trop grande qualtité d'eau (". $equine->getWater() . "L).\n";
+            } else {
+                $this->subscribeHorse[] = $equine;
+                echo "L'animal " . $equine->getId() . " a bien été inscrit à l'évènement " . $this->getEventName() . ".\n";
+                $this->MaxWater = $this->getMaxWater() - $equine->getWater();
+            }
         } else {
-            echo "L'animal " . $equine->getId() . " a bien été inscrit à l'évènement " . $this->getEventName() . ".\n";
-            $this->MaxWater = $this->getMaxWater() - $equine->getWater();
+            echo "Ohoh ! L'animal " . $equine->getId() . " NE PEUT PAS participer à l'évènement " . $this->getEventName() . " car il n'y a plus de place.\n";
         }
+
     }
 
 

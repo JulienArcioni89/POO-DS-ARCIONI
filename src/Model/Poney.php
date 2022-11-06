@@ -11,7 +11,7 @@ class Poney extends Equine
 
     public function __toString()
     {
-        return "ID du cheval : " . $this->getId() . " de couleur " . $this->getColor() . ". A besoin de " . $this->getWater() . "L d'eau. \n";
+        return "ID du poney : " . $this->getId() . " de couleur " . $this->getColor() . ". A besoin de " . $this->getWater() . "L d'eau. \n";
 
     }
 

@@ -126,11 +126,11 @@ abstract class Human
     public function __toString(): string
     {
         return "Informations sur la personne: \n
-        Nom: {$this->getNom()} \n
-        Adresse: {$this->getAddress()} \n
-        Rue: {$this->getStreet()} \n
-        Code postal: {$this->getPostCode()} \n
-        Ville: {$this->getCity()} \n
+        Nom: {$this->getNom()}
+        Adresse: {$this->getAddress()}
+        Rue: {$this->getStreet()}
+        Code postal: {$this->getPostCode()}
+        Ville: {$this->getCity()}
         Catégorie: {$this->getCategorie()->getNom()} \n";
     }
 

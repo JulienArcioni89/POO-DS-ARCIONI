@@ -4,28 +4,15 @@ namespace App\Model;
 
 class Sheitland extends Equine
 {
-    protected string $nom;
-
-    public function __construct()
+    public function __construct(string $id, string $color, int $water, Rider $rider )
     {
-        $this->setNom("Sheitland");
-        $this->setCapacite("Sheitland");
+        parent::__construct($id, $color, $water, $rider, new CatSheitland());
     }
 
-    /**
-     * @return string
-     */
-    public function getNom(): string
+    public function __toString()
     {
-        return $this->nom;
+        return "ID du cheval : " . $this->getId() . " de couleur " . $this->getColor() . ". Possède " . $this->getWater() . "L d'eau. \n Son cavalier est : " . $this->getRider();
+
     }
 
-    /**
-     * @param string $nom
-     */
-    public function setNom(string $nom): self
-    {
-        $this->nom = $nom;
-        return $this;
-    }
 }

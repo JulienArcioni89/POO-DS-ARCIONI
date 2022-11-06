@@ -2,11 +2,11 @@
 
 namespace App\Model;
 
-class Horse extends Equine
+class Poney extends Equine
 {
     public function __construct(string $id, string $color, int $water, Rider $rider )
     {
-        parent::__construct($id, $color, $water, $rider, new CatHorse());
+        parent::__construct($id, $color, $water, $rider, new CatPoney());
     }
 
     public function __toString()

@@ -4,15 +4,15 @@ namespace App\Model;
 
 class Rider extends Human
 {
-    private Capabilities $gameType;
+    private Capabilities $GameType;
 
     /**
      * @var array
      */
-    public function __construct(string $nom, string $address, string $street, string $postCode, string $city, Capabilities $gameType)
+    public function __construct(string $nom, string $address, string $street, string $postCode, string $city, Capabilities $GameType)
     {
         parent::__construct($nom, $address, $street, $postCode, $city, new CatRider());
-        $this->setGameType($gameType);
+        $this->setGameType($GameType);
     }
 
     /**
@@ -20,15 +20,15 @@ class Rider extends Human
      */
     public function getGameType(): Capabilities
     {
-        return $this->gameType;
+        return $this->GameType->getNom();
     }
 
     /**
-     * @param Capabilities $gameType
+     * @param Capabilities $GameType
      */
-    public function setGameType(Capabilities $gameType): Rider
+    public function setGameType(Capabilities $GameType): Rider
     {
-        $this->GameType = $gameType;
+        $this->GameType = $GameType;
         return $this;
     }
 }

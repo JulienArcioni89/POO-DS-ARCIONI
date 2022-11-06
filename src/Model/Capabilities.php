@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class Capabilities
+abstract class Capabilities
 {
     protected string $capacite;
 
@@ -21,7 +21,7 @@ class Capabilities
     /**
      * @param string $capacite
      */
-    public function setCapacite(string $capacite): self
+    public function setCapacite($capacite): self
     {
         $this->capacite = $capacite;
         return $this;

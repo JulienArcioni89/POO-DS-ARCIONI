@@ -4,28 +4,15 @@ namespace App\Model;
 
 class Dressage extends Capabilities
 {
-    protected string $nom;
 
-    public function __construct()
+    public function __construct( $capacite)
     {
-        $this->setNom("Dressage");
+        parent::__construct($capacite);
         $this->setCapacite("Dressage");
     }
 
-    /**
-     * @return string
-     */
-    public function getNom(): string
+    public function __toString()
     {
-        return $this->nom;
-    }
-
-    /**
-     * @param string $nom
-     */
-    public function setNom(string $nom): self
-    {
-        $this->nom = $nom;
-        return $this;
+        return $this->getCapacite();
     }
 }

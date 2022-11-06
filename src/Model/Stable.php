@@ -10,6 +10,8 @@ class Stable
     private string $postCode;
     private string $city;
     private Manager $manager;
+    private array $equines;
+
 
     public function __construct(string $nom, string $address, string $street, string $postCode, string $city, Manager $manager)
     {
@@ -124,15 +126,39 @@ class Stable
         return $this;
     }
 
+
+    /**
+     * @return array
+     */
+    public function getEquines(): array
+    {
+        return $this->equines;
+    }
+
+    /**
+     * @param array $equines
+     */
+    public function setEquines(array $equines): void
+    {
+        $this->equines = $equines;
+    }
+
+    public function addEquine(Equine $equine): array
+    {
+        $this->equines[] = $equine;
+        return $this->equines;
+    }
+
+
     public function __toString(): string
     {
         return "Détails de l'écurie: \n
-        Nom: {$this->getNom()}\n
-        Adresse: {$this->getAddress()}\n
-        Rue: {$this->getStreet()}\n
-        Code postal: {$this->getPostCode()}\n
-        Ville: {$this->getCity()}\n
-        Gérant: {$this->getManager()}\n";
+        Nom: {$this->getNom()}
+        Adresse: {$this->getAddress()}
+        Rue: {$this->getStreet()}
+        Code postal: {$this->getPostCode()}
+        Ville: {$this->getCity()}
+        Manager: {$this->getManager()->getNom()} \n";
     }
 
 }

@@ -82,15 +82,14 @@ abstract class Event
     /**
      * @return string $subscribeHorse
      */
-    public function subscribeHorse(Equine $equine): self
+    public function subscribeHorse(Equine $equine): void
     {
         if ($equine->getWater() > $this->getMaxWater()) {
-            echo "L'animal " . $equine->getId() . " ne peut pas participer à l'évènement " . $this->getEventName() . " car il a trop d'eau en réserve.\n";
+            echo "Ohoh ! L'animal " . $equine->getId() . " NE PEUT PAS participer à l'évènement " . $this->getEventName() . " car il a besoin d'une trop grande qualtité d'eau (". $equine->getWater() . "L).\n";
         } else {
             echo "L'animal " . $equine->getId() . " a bien été inscrit à l'évènement " . $this->getEventName() . ".\n";
-
+            $this->MaxWater = $this->getMaxWater() - $equine->getWater();
         }
-        return $this;
     }
 
 

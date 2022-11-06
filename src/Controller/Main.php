@@ -55,7 +55,7 @@ class Main
         echo "\n";
 
         // On crée un évènement
-        $event = new Course("Grand Prix de Caen", 10, 70);
+        $event = new Course("Grand Prix de Caen", 10, 40);
 
         // On ajoute des chevaux à l'évènement
         $subCheval = $event->subscribeHorse($cheval);

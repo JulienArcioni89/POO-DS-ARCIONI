@@ -11,11 +11,11 @@ class Manager extends Human
 
     public function __toString(): string
     {
-        return "Informations sur la personne sélectionnée en tant que manager : \n
+        return "Personne crée : informations sur cette personne : \n
         Nom: {$this->getNom()}
         Adresse: {$this->getAddress()}
         Rue: {$this->getStreet()}
         Code postal: {$this->getPostCode()}
-        Ville: {$this->getCity()} \n";
+        Ville: {$this->getCity()} \n\n";
     }
 }

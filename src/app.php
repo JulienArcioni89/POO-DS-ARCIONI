@@ -13,8 +13,6 @@ define('PUBLIC_DIR', __DIR__ . '/../public/');
 
 use App\Controller\Main;
 
-/*use App\Model\Manager;
-use App\Model\Stable;*/
 
 $prgm = new Main();
 $prgm->execute();

@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+// Definition of the Stable class
 class Stable
 {
     // Definition of the attributes
@@ -167,5 +168,4 @@ class Stable
         Ville: {$this->getCity()}
         Manager: {$this->getManager()->getNom()}\n\n";
     }
-
 }

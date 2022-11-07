@@ -2,8 +2,10 @@
 
 namespace App\Model;
 
+// Definition of the Equine class
 abstract class Equine
 {
+    // Définition of the attributes
     private string $id;
     private string $color;
     private int $water;
@@ -11,7 +13,7 @@ abstract class Equine
     private Rider $rider;
     private Stable $stable;
 
-
+    // Definition of the constructor
     public function __construct(string $id, string $color, int $water, Rider $rider, categorie $categorie)
     {
         $this->setId($id);
@@ -107,7 +109,6 @@ abstract class Equine
     }
 
 
-
     /**
      * @return Stable
      */
@@ -136,10 +137,4 @@ abstract class Equine
     {
         return $this->getId();
     }
-
-/*    public function setEvent(Event $param)
-    {
-        $this->event = $param;
-    }*/
-
 }

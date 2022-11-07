@@ -2,13 +2,13 @@
 
 namespace App\Model;
 
+// Definition of the Rider class
 class Rider extends Human
 {
+    // Définition of the attribute
     private Capabilities $GameType;
 
-    /**
-     * @var array
-     */
+    // Definition of the constructor
     public function __construct(string $nom, string $address, string $street, string $postCode, string $city, Capabilities $GameType)
     {
         parent::__construct($nom, $address, $street, $postCode, $city, new CatRider());

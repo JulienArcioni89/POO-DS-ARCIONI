@@ -2,8 +2,10 @@
 
 namespace App\Model;
 
+// Definition of the Human class
 abstract class Human
 {
+    // Définition of the attributes
     private string $nom;
     private string $address;
     private string $street;
@@ -11,6 +13,7 @@ abstract class Human
     private string $city;
     private Categorie $categorie;
 
+    // Definition of the constructor
     public function __construct(string $nom, string $address, string $street, string $postCode, string $city, Categorie $categorie)
     {
         $this->setNom($nom)
@@ -123,6 +126,7 @@ abstract class Human
         return $this;
     }
 
+    // Definition of the __toString() method
     public function __toString(): string
     {
         return "Informations sur la personne: \n
@@ -133,5 +137,4 @@ abstract class Human
         Ville: {$this->getCity()}
         Catégorie: {$this->getCategorie()->getNom()} \n\n\n";
     }
-
 }

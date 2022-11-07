@@ -2,10 +2,13 @@
 
 namespace App\Model;
 
+// Definition of the Capabilities class
 abstract class Capabilities
 {
+    // Définition of the attribute
     protected string $capacite;
 
+    // Definition of the constructor
     public function __construct()
     {
     }

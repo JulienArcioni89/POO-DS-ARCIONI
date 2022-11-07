@@ -108,31 +108,6 @@ abstract class Equine
         return $this;
     }
 
-
-    /**
-     * @return Stable
-     */
-    public function getStable(): Stable
-    {
-        return $this->stable;
-    }
-
-    /**
-     * @param Stable $stable
-     */
-    public function setStable(Stable $stable): self
-    {
-        $this->stable = $stable;
-        return $this;
-    }
-
-    public function addStable(Stable $stable): Stable
-    {
-        $this->stable = $stable;
-        $stable->addEquine($this);
-        return $stable;
-    }
-
     public function __toString()
     {
         return $this->getId();

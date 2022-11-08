@@ -45,23 +45,23 @@ class Main
 
 
         // Instantiate a Horse object with michel as rider
-        $cheval = new Horse("10", "Alzan", 100, $michel);
+        $cheval = new Horse("Lucky", "Alzan", 100, $michel);
         echo "Nouveau : " . $cheval . "Son cavalier est : " . $michel->getNom() . "\n";
         echo "\n";
 
         // Instantiate a Poney object with jean as rider
-        $poney = new Poney("20", "White", 60, $jean);
+        $poney = new Poney("Abo", "White", 60, $jean);
         echo "Nouveau : " . $poney . "Son cavalier est : " . $jean->getNom() . "\n";
         echo "\n";
 
         // Instantiate a Sheitland object with michel as rider
-        $sheitland = new Sheitland("30", "Pie", 20, $michel);
+        $sheitland = new Sheitland("Bueno", "Pie", 20, $michel);
         echo "Nouveau : " . $sheitland . "Son cavalier est : " . $michel->getNom() . "\n";
         echo "\n";
 
         // Instantiate a Sheitland object with michel as rider
-        $sheitland1 = new Sheitland("31", "Grey", 5, $michel);
-        echo "Nouveau : " . $sheitland . "Son cavalier est : " . $michel->getNom() . "\n";
+        $sheitland1 = new Sheitland("Cachou", "Grey", 5, $michel);
+        echo "Nouveau : " . $sheitland1 . "Son cavalier est : " . $michel->getNom() . "\n";
         echo "\n";
 
         // Instantiate a Course with a maximum of 2 commitments and 121 liters of water for the example
@@ -82,13 +82,13 @@ class Main
         // Le nombre de participants est de 2, il y aura donc THEORIQUEMENT 2 annimaux non inscrits par faute de place.
         // Il y a 121 litres d'eau disponible pour l'évènement
 
-        // Le premier animal inscrit est l'ID 10, il devrait être inscrit
+        // Le premier animal devrait être inscrit
 
-        // Le second animal inscrit est l'ID 20, il ne devrait pas être inscrit car il a besoin de beaucoup trop d'eau.
+        // Le second animal inscrit ne devrait pas être inscrit car il a besoin de beaucoup trop d'eau.
 
-        // Le troisième animal inscrit est l'ID 30, il devrait être inscrit
+        // Le troisième animal inscrit devrait être inscrit
 
-        // Le quatrième animal inscrit est l'ID 31, il ne devrait pas être inscrit car il n'y a plus de place,
+        // Le quatrième animal inscrit ne devrait pas être inscrit car il n'y a plus de place,
             // mais aurait pu l'être s'il y avait eu plus de place car il y aurait eu assez d'eau pour lui.
 
         // Il y aura donc normalement 2 animaux inscrits et 2 animaux non inscrits

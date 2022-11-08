@@ -6,21 +6,50 @@ namespace App\Model;
 abstract class Equine
 {
     // Définition of the attributes
-    private string $id;
+    private string $name;
     private string $color;
     private int $water;
     private Categorie $categorie;
     private Rider $rider;
-    private Stable $stable;
+    private string $id;
+    static private int $nbEquine = 1;
+
 
     // Definition of the constructor
-    public function __construct(string $id, string $color, int $water, Rider $rider, categorie $categorie)
+    public function __construct(string $name, string $color, int $water, Rider $rider, categorie $categorie)
     {
-        $this->setId($id);
+        $this->setName($name);
         $this->setColor($color);
         $this->setWater($water);
         $this->setCategorie($categorie);
         $this->setRider($rider);
+        $this->setId($color,$name);
+        self::$nbEquine++;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public static function getNbEquine(): int
+    {
+        return self::$nbEquine;
     }
 
     /**
@@ -34,9 +63,9 @@ abstract class Equine
     /**
      * @param string $id
      */
-    public function setId(string $id): self
+    public function setId(string $color, string $nom): Equine
     {
-        $this->id = $id;
+        $this->id = "000-" . $nom[0] . "-" . $color[0] . "-" . $this->getnbEquine();
         return $this;
     }
 

@@ -1,7 +1,7 @@
 <?php
 
 //
-// EXECUTER LE FICHIER "app.php" POUR VOIR LE RESULTAT DECRIT EN BAS DE CE FICHIER
+// MARCHE A SUIVRE EXPLIQUEE EN BAS DE CE FICHIER
 //
 
 namespace App\Controller;
@@ -55,7 +55,7 @@ class Main
         echo "\n";
 
         // Instantiate a Sheitland object with michel as rider
-        $sheitland = new Sheitland("Bueno", "Pie", 20, $michel);
+        $sheitland = new Sheitland("Bueno", "Pie", 5, $michel);
         echo "Nouveau : " . $sheitland . "Son cavalier est : " . $michel->getNom() . "\n";
         echo "\n";
 
@@ -65,37 +65,42 @@ class Main
         echo "\n";
 
         // Instantiate a Course with a maximum of 2 commitments and 121 liters of water for the example
-        $event = new Course("Grand Prix de Caen", 2, 135);
+        $event = new Course("Grand Prix de Caen", 2, 150);
 
-        // Add horses to the event
-        $subCheval = $event->subscribeHorse($cheval);
-        $subPoney = $event->subscribeHorse($poney);
-        $subSheitland = $event->subscribeHorse($sheitland);
-        $subSheitland1 = $event->subscribeHorse($sheitland1);
+
+        // FIRST
+//        $subCheval = $event->subscribeHorse($cheval);
+
+        // SECOND
+//        $subCheval = $event->subscribeHorse($cheval);
+//        $subPoney = $event->subscribeHorse($poney);
+
+        // THIRD
+//        $subCheval = $event->subscribeHorse($cheval);
+//        $subSheitland1 = $event->subscribeHorse($sheitland1);
+//        $subSheitland = $event->subscribeHorse($sheitland);
+
 
         // Display the event -> displays the name of the event & number of participants & amount of water remaining
         echo $event;
 
-        // EXPLICATIONS DU RESULTAT ATTENDU :
 
-        // Le nom de l'évènement est : Grand Prix de Caen
-        // Le nombre de participants est de 2, il y aura donc THEORIQUEMENT 2 annimaux non inscrits par faute de place.
-        // Il y a 121 litres d'eau disponible pour l'évènement
+        //******************************************************************************************************************
+        // MARCHE A SUIVRE :
+        //******************************************************************************************************************
 
-        // Le premier animal devrait être inscrit
+        // **1** Exécuter le app.php ce qui affichera :
+        // Informations sur les personnes créées, le manager et le détail de l'écurie
+        // Informations sur les chevaux créés : ID, couleur, besoin en eau et leur cavalier
+        // Informations sur le premier évènement créé : nom, nombre de participants et eau restante (150 au début)
 
-        // Le second animal inscrit ne devrait pas être inscrit car il a besoin de beaucoup trop d'eau.
+        // **2** Décommenter la partie FIRST du code (l.72):
+        // Résultat attendu : le cheval Lucky est inscrit à l'évènement Grand Prix de Caen
 
-        // Le troisième animal inscrit devrait être inscrit
+        // **3** Décommenter la partie SECOND du code (l.75-76) et commenter la partie FIRST :
+        // Résultat attendu : Lucky est inscrit mais ERREUR -> plus d'eau disponible pour Abo car Lucky a pris 100L et manque 10L pour Abo
 
-        // Le quatrième animal inscrit ne devrait pas être inscrit car il n'y a plus de place,
-            // mais aurait pu l'être s'il y avait eu plus de place car il y aurait eu assez d'eau pour lui.
-
-        // Il y aura donc normalement 2 animaux inscrits et 2 animaux non inscrits
-
-        // Il restera normalement 15L d'eau à la fin (135 - (100 - 20) = 15)
-
-        // EXECUTER LE FICHIER "app.php" POUR VERIFIER LE RESULTAT ATTENDU
-
+        // **4** Décommenter la partie THIRD du code (l.79-80-81) et commenter la partie SECOND :
+        // Résultat attendu : Lucky et Cachou sont inscrits mais pas Bueno car il n'y a plus de place disponible (2 seulement) -> ERREUR après la deuxième inscription.
     }
 }

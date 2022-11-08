@@ -74,7 +74,7 @@ abstract class Event
         if (count($this->subscribeHorse) < $this->MaxCommitments) {
             // Check if there are still water available
             if ($equine->getWater() > $this->getMaxWater()) {
-                echo "Oupss ! L'animal " . $equine->getId() . " NE PEUT PAS participer à l'évènement " . $this->getEventName() . " car il a besoin d'une trop grande qualtité d'eau (". $equine->getWater() . "L).\n";
+                throw new \Exception("Il n'y a plus d'eau disponible pour cet événement");
             } else {
                 // Add the horse to the array
                 $this->subscribeHorse[] = $equine;
@@ -82,7 +82,7 @@ abstract class Event
                 $this->MaxWater = $this->getMaxWater() - $equine->getWater();
             }
         } else {
-            echo "Oupss ! L'animal " . $equine->getId() . " NE PEUT PAS participer à l'évènement " . $this->getEventName() . " car il n'y a plus de place.\n";
+            throw new \Exception("Oupss ! L'évènement " . $this->getEventName() . " est complet !\n");
         }
 
     }
